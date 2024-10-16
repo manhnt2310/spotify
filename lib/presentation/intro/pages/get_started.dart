@@ -3,6 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:myapp/common/widgets/button/basic_app_button.dart';
 import 'package:myapp/core/configs/assets/app_images.dart';
 import 'package:myapp/core/configs/assets/app_vectors.dart';
+
+import '../../choose_mode/pages/choose_mode.dart';
 // import 'package:myapp/core/configs/theme/app_colors.dart';
 
 class GetStartedPage extends StatelessWidget {
@@ -14,13 +16,22 @@ class GetStartedPage extends StatelessWidget {
       body: Stack(
         children: [
           Container(
+              padding: const EdgeInsets.symmetric(
+                vertical: 40,
+                horizontal: 40,
+              ),
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      fit: BoxFit.fill,
+                      image: AssetImage(AppImages.introBG1)))),
+          Container(
+            color: Colors.black.withOpacity(0.15),
+          ),
+          Padding(
             padding: const EdgeInsets.symmetric(
               vertical: 40,
               horizontal: 40,
             ),
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-                    fit: BoxFit.fill, image: AssetImage(AppImages.introBG1))),
             child: Column(
               children: [
                 Align(
@@ -31,7 +42,7 @@ class GetStartedPage extends StatelessWidget {
                 const Text(
                   'Enjoy Listening To Music',
                   style: TextStyle(
-                    fontSize: 19,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
@@ -48,15 +59,20 @@ class GetStartedPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 BasicAppButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            const ChooseModePage(),
+                      ),
+                    );
+                  },
                   title: 'Get Started',
                 )
               ],
             ),
           ),
-          Container(
-            color: Colors.black.withOpacity(0.15),
-          )
         ],
       ),
     );
