@@ -5,4 +5,5 @@ class AppImages {
   static const String chooseModeBG1 = 'lib/assets/images/choose_mode_bg1.jpg';
   static const String sun = 'lib/assets/images/sun.png';
   static const String moon = 'lib/assets/images/moon.png';
+  static const String authBG = 'lib/assets/images/auth_bg.png';
 }
